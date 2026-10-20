@@ -1,0 +1,21 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Designer/editor artifacts (not referenced by the site)
+.thumbnail
+uploads/
+.dc-tmp/
+
+# Tooling (source lives elsewhere; support.js is consumed as-is)
+node_modules/
+.netlify/
+.env
+.env.*
+!.env.example

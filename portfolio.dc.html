@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Portfolio &amp; Results | Digital Musker</title>
+<meta name="description" content="Real channels, real results. A track record built across 800+ YouTube creators worldwide.">
+<link rel="icon" href="https://digitalmusker.com/wp-content/uploads/2025/12/Favicon-Black.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>html,body{margin:0;background:#F2EFE8;-webkit-font-smoothing:antialiased;} *{box-sizing:border-box;} a{color:#2B6BF3;} a:hover{color:#1D55D6;}</style>
+</helmet>
+<main style="font-family:'Manrope',sans-serif;color:#111214;background:#F2EFE8;overflow-x:hidden;">
+
+  <section data-screen-label="Portfolio hero" style="background:#2B6BF3;color:#fff;">
+    <dc-import name="site-nav" active="portfolio" hint-size="100%,76px"></dc-import>
+    <div style="max-width:1280px;margin:0 auto;padding:clamp(40px,6vw,80px) clamp(16px,4vw,40px) clamp(48px,6vw,80px);display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap;">
+      <h1 style="margin:0;font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(64px,11vw,170px);line-height:.88;">Real channels.<br>Real results.</h1>
+      <div style="display:flex;gap:36px;flex-wrap:wrap;">
+        <div style="display:flex;flex-direction:column;gap:4px;"><span style="font-family:'Anton',sans-serif;font-size:48px;font-style:italic;line-height:1;">800+</span><span style="font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;">Channels</span></div>
+        <div style="display:flex;flex-direction:column;gap:4px;"><span style="font-family:'Anton',sans-serif;font-size:48px;font-style:italic;line-height:1;">6</span><span style="font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;">Regions</span></div>
+        <div style="display:flex;flex-direction:column;gap:4px;"><span style="font-family:'Anton',sans-serif;font-size:48px;font-style:italic;line-height:1;">4.9★</span><span style="font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;">Avg. rating</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Case grid" style="max-width:1280px;margin:0 auto;padding:clamp(56px,8vw,110px) clamp(16px,4vw,40px);display:flex;flex-direction:column;gap:32px;">
+    <p style="margin:0;font-size:17px;line-height:1.6;max-width:560px;color:#3B3934;">A few of the channels I've worked with. Click any card to see the full results.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:20px;">
+      <sc-for list="{{ items }}" as="it" hint-placeholder-count="6">
+        <button onClick="{{ it.open }}" style="all:unset;cursor:pointer;background:#fff;border-radius:16px;overflow:hidden;display:flex;flex-direction:column;" style-hover="box-shadow:0 0 0 3px #2B6BF3;">
+          <img src="{{ it.src }}" alt="{{ it.name }}" style="width:100%;aspect-ratio:4/3;object-fit:cover;object-position:top;display:block;background:#E6E2D8;">
+          <div style="padding:16px 18px;display:flex;justify-content:space-between;align-items:center;gap:12px;">
+            <span style="font-family:'Anton',sans-serif;font-size:24px;text-transform:uppercase;">{{ it.name }}</span>
+            <span style="width:12px;height:12px;border-radius:50%;background:{{ it.color }};"></span>
+          </div>
+        </button>
+      </sc-for>
+    </div>
+  </section>
+
+  <sc-if value="{{ hasActive }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ close }}" style="position:fixed;inset:0;z-index:100;background:rgba(10,20,50,.82);display:flex;align-items:center;justify-content:center;padding:24px;">
+      <div style="position:relative;max-width:1100px;width:100%;max-height:100%;overflow:auto;background:#fff;border-radius:16px;">
+        <img src="{{ active.src }}" alt="{{ active.name }}" style="width:100%;height:auto;display:block;">
+        <button onClick="{{ close }}" style="all:unset;cursor:pointer;position:absolute;top:12px;right:12px;background:#111214;color:#fff;border-radius:6px;padding:8px 14px;font-weight:800;font-size:13px;">Close ✕</button>
+      </div>
+    </div>
+  </sc-if>
+
+  <section data-screen-label="Testimonials" style="background:#2B6BF3;color:#fff;padding:clamp(72px,9vw,120px) clamp(16px,4vw,40px);">
+    <div style="max-width:1280px;margin:0 auto;display:flex;flex-direction:column;gap:48px;">
+      <div style="display:flex;flex-direction:column;gap:14px;align-items:center;text-align:center;">
+        <h2 style="margin:0;font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(44px,6.4vw,96px);line-height:.95;">In their words.</h2>
+        <p style="margin:0;font-size:16px;line-height:1.6;max-width:440px;">Creator success stories powered by strategy, trust and measurable growth.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:18px;">
+        <figure style="margin:0;background:#fff;color:#111214;border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:24px;justify-content:space-between;"><blockquote style="margin:0;font-size:17px;line-height:1.55;">“Digital Musker truly knows YouTube Growth. My videos are now optimized perfectly, and the improvement in my channel's performance has been amazing.”</blockquote><figcaption style="display:flex;align-items:center;gap:12px;font-weight:800;font-size:14px;"><img src="https://digitalmusker.com/wp-content/uploads/2025/11/male-3.jpg" alt="" style="width:44px;height:44px;border-radius:50%;object-fit:cover;">Sam Walker</figcaption></figure>
+        <figure style="margin:0;background:#F7D64A;color:#111214;border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:24px;justify-content:space-between;"><blockquote style="margin:0;font-size:17px;line-height:1.55;">“Thanks to Digital Musker! His YouTube strategies have transformed my reach. My videos are now getting real traction, and the growth is outstanding.”</blockquote><figcaption style="display:flex;align-items:center;gap:12px;font-weight:800;font-size:14px;"><img src="https://digitalmusker.com/wp-content/uploads/2025/11/female-3-150x150.jpg" alt="" style="width:44px;height:44px;border-radius:50%;object-fit:cover;">Emily Carter</figcaption></figure>
+        <figure style="margin:0;background:#fff;color:#111214;border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:24px;justify-content:space-between;"><blockquote style="margin:0;font-size:17px;line-height:1.55;">“Digital Musker's YouTube expertise is unmatched. My channel is growing faster than ever, and his commitment to real, measurable results is impressive.”</blockquote><figcaption style="display:flex;align-items:center;gap:12px;font-weight:800;font-size:14px;"><img src="https://digitalmusker.com/wp-content/uploads/2025/11/male-1.jpg" alt="" style="width:44px;height:44px;border-radius:50%;object-fit:cover;">Daniel Harris</figcaption></figure>
+      </div>
+      <a href="https://www.fiverr.com/digitalmusker" style="align-self:center;display:flex;align-items:center;gap:8px;border:1.5px solid #fff;color:#fff;text-decoration:none;font-size:14px;font-weight:700;padding:14px 22px;border-radius:6px;" style-hover="background:rgba(255,255,255,.12);color:#fff;">Read 600+ reviews on Fiverr →</a>
+    </div>
+  </section>
+
+  <dc-import name="site-footer" cta-title="Your channel could be next." hint-size="100%,1100px"></dc-import>
+</main>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { active: null };
+  componentDidMount() {
+    this._k = e => { if (e.key === 'Escape') this.setState({ active: null }); };
+    window.addEventListener('keydown', this._k);
+  }
+  componentWillUnmount() { window.removeEventListener('keydown', this._k); }
+  renderVals() {
+    const base = 'https://digitalmusker.com/wp-content/uploads/2026/03/';
+    const list = [
+      ['MSCS Media', '1-MSCS-MEDIA.png', '#FF8A3D'], ['Tafsire', '2-TAFSIRE.png', '#9C6CFF'],
+      ['LJ Aviles', '3-LJ-AVILES.png', '#29BDEB'], ['Clay Mania', '4-CLAY-MANIA.png', '#63CF5C'],
+      ['Teach TV', '5-TEACH-TV.png', '#FF6FB8'], ['Just Call Maggie', '6-JUST-CALL-MAGGIE.png', '#F7D64A'],
+    ].map(([name, f, color]) => ({ name, src: base + f, color }));
+    return {
+      items: list.map(it => ({ ...it, open: () => this.setState({ active: it }) })),
+      active: this.state.active || {},
+      hasActive: !!this.state.active,
+      close: e => { if (e.target === e.currentTarget) this.setState({ active: null }); },
+    };
+  }
+}
+</script>
+</body>
+</html>

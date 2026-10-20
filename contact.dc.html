@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Contact | Digital Musker</title>
+<meta name="description" content="Ready to grow your channel? Book a free consultation with Digital Musker or chat on WhatsApp.">
+<link rel="icon" href="https://digitalmusker.com/wp-content/uploads/2025/12/Favicon-Black.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>html,body{margin:0;background:#F2EFE8;-webkit-font-smoothing:antialiased;} *{box-sizing:border-box;} a{color:#2B6BF3;} a:hover{color:#1D55D6;}</style>
+</helmet>
+<main style="font-family:'Manrope',sans-serif;color:#111214;background:#F2EFE8;overflow-x:hidden;">
+
+  <section data-screen-label="Contact hero" style="background:#2B6BF3;color:#fff;padding-bottom:clamp(140px,16vw,200px);">
+    <dc-import name="site-nav" active="contact" hint-size="100%,76px"></dc-import>
+    <div style="max-width:1280px;margin:0 auto;padding:clamp(40px,6vw,80px) clamp(16px,4vw,40px) 0;display:flex;flex-direction:column;gap:22px;">
+      <h1 style="margin:0;font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(64px,11vw,170px);line-height:.88;">Let's talk<br>growth.</h1>
+      <p style="margin:0;font-size:clamp(16px,1.4vw,19px);line-height:1.6;max-width:520px;">Ready to grow your channel? Let's make your next breakthrough happen. I usually reply within an hour.</p>
+    </div>
+  </section>
+
+  <section data-screen-label="Contact body" style="max-width:1280px;margin:calc(-1 * clamp(110px,13vw,160px)) auto 0;padding:0 clamp(16px,4vw,40px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:20px;align-items:start;position:relative;">
+    <div style="background:#fff;border-radius:20px;padding:clamp(24px,3.5vw,44px);display:flex;flex-direction:column;gap:22px;box-shadow:0 20px 60px rgba(17,18,20,.12);">
+      <h2 style="margin:0;font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:40px;line-height:1;">I'd love to hear from you.</h2>
+      <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+        <form onSubmit="{{ submit }}" style="display:flex;flex-direction:column;gap:16px;">
+          <label style="display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:800;">Name *
+            <input required name="name" value="{{ name }}" onChange="{{ setName }}" placeholder="Your name" style="font:inherit;font-weight:500;font-size:16px;padding:14px 16px;border-radius:8px;border:1.5px solid #D9D4C8;background:#F8F6F1;outline:none;" style-focus="border-color:#2B6BF3;">
+          </label>
+          <label style="display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:800;">Email *
+            <input required type="email" name="email" value="{{ email }}" onChange="{{ setEmail }}" placeholder="you@example.com" style="font:inherit;font-weight:500;font-size:16px;padding:14px 16px;border-radius:8px;border:1.5px solid #D9D4C8;background:#F8F6F1;outline:none;" style-focus="border-color:#2B6BF3;">
+          </label>
+          <label style="display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:800;">Channel link
+            <input name="channel" value="{{ channel }}" onChange="{{ setChannel }}" placeholder="youtube.com/@yourchannel" style="font:inherit;font-weight:500;font-size:16px;padding:14px 16px;border-radius:8px;border:1.5px solid #D9D4C8;background:#F8F6F1;outline:none;" style-focus="border-color:#2B6BF3;">
+          </label>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <span style="font-size:13px;font-weight:800;">I'm interested in</span>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;">
+              <sc-for list="{{ services }}" as="s" hint-placeholder-count="4">
+                <sc-if value="{{ s.on }}" hint-placeholder-val="{{ false }}"><button type="button" onClick="{{ s.toggle }}" style="all:unset;cursor:pointer;background:#2B6BF3;color:#fff;border-radius:999px;padding:9px 16px;font-size:13px;font-weight:700;">{{ s.label }}</button></sc-if>
+                <sc-if value="{{ s.off }}" hint-placeholder-val="{{ true }}"><button type="button" onClick="{{ s.toggle }}" style="all:unset;cursor:pointer;background:#F2EFE8;color:#111214;border-radius:999px;padding:9px 16px;font-size:13px;font-weight:700;" style-hover="background:#E6E2D8;">{{ s.label }}</button></sc-if>
+              </sc-for>
+            </div>
+          </div>
+          <label style="display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:800;">Message *
+            <textarea required name="message" value="{{ message }}" onChange="{{ setMessage }}" rows="5" placeholder="Tell me about your channel and your goals" style="font:inherit;font-weight:500;font-size:16px;padding:14px 16px;border-radius:8px;border:1.5px solid #D9D4C8;background:#F8F6F1;outline:none;resize:vertical;" style-focus="border-color:#2B6BF3;"></textarea>
+          </label>
+          <button type="submit" style="all:unset;cursor:pointer;text-align:center;background:#2B6BF3;color:#fff;font-weight:800;font-size:14px;letter-spacing:.06em;text-transform:uppercase;padding:16px 22px;border-radius:8px;" style-hover="background:#1D55D6;">Send message →</button>
+          <span style="font-size:12px;color:#5C5950;line-height:1.5;">Sending opens WhatsApp with your message ready to go.</span>
+        </form>
+      </sc-if>
+      <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;flex-direction:column;gap:14px;padding:20px 0;">
+          <span style="width:48px;height:48px;border-radius:50%;background:#63CF5C;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:800;">✓</span>
+          <p style="margin:0;font-size:17px;line-height:1.6;">Thanks, {{ name }}. WhatsApp should have opened with your message. If not, message me at +880 1609 010630.</p>
+          <button onClick="{{ reset }}" style="all:unset;cursor:pointer;color:#2B6BF3;font-weight:800;font-size:14px;">Send another →</button>
+        </div>
+      </sc-if>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:14px;">
+      <a href="https://cal.com/digitalmusker/30min" style="background:#F7D64A;color:#111214;border-radius:20px;padding:clamp(24px,3vw,36px);text-decoration:none;display:flex;flex-direction:column;gap:10px;" style-hover="background:#F3CC2C;">
+        <span style="font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;">Free consultation</span>
+        <span style="font-family:'Anton',sans-serif;font-size:38px;text-transform:uppercase;line-height:1;">Book a 30-min call →</span>
+        <span style="font-size:14px;line-height:1.5;">Pick a time that suits you on cal.com.</span>
+      </a>
+      <a href="https://wa.me/8801609010630" style="background:#fff;color:#111214;border-radius:20px;padding:clamp(22px,3vw,32px);text-decoration:none;display:flex;justify-content:space-between;align-items:center;gap:16px;" style-hover="box-shadow:0 0 0 2px #2B6BF3 inset;">
+        <div style="display:flex;flex-direction:column;gap:6px;"><span style="font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#5C5950;">Live chat · WhatsApp</span><span style="font-family:'Anton',sans-serif;font-size:28px;line-height:1;">+880 1609 010630</span></div>
+        <span style="width:44px;height:44px;border-radius:10px;background:#63CF5C;flex:none;display:flex;align-items:center;justify-content:center;font-weight:800;">→</span>
+      </a>
+      <a href="https://vidranko.com/" style="background:#fff;color:#111214;border-radius:20px;padding:clamp(22px,3vw,32px);text-decoration:none;display:flex;justify-content:space-between;align-items:center;gap:16px;" style-hover="box-shadow:0 0 0 2px #2B6BF3 inset;">
+        <div style="display:flex;flex-direction:column;gap:6px;"><span style="font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#5C5950;">Hire me</span><span style="font-family:'Anton',sans-serif;font-size:28px;line-height:1;">VidRanko packages</span></div>
+        <span style="width:44px;height:44px;border-radius:10px;background:#9C6CFF;color:#fff;flex:none;display:flex;align-items:center;justify-content:center;font-weight:800;">→</span>
+      </a>
+      <div style="background:#fff;border-radius:20px;padding:clamp(22px,3vw,32px);display:flex;flex-direction:column;gap:14px;">
+        <span style="font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#5C5950;">Follow</span>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;">
+          <a href="https://www.linkedin.com/in/digitalmusker" style="background:#F2EFE8;color:#111214;text-decoration:none;border-radius:999px;padding:10px 16px;font-size:13px;font-weight:700;" style-hover="background:#2B6BF3;color:#fff;">LinkedIn</a>
+          <a href="https://www.instagram.com/digitalmusker" style="background:#F2EFE8;color:#111214;text-decoration:none;border-radius:999px;padding:10px 16px;font-size:13px;font-weight:700;" style-hover="background:#2B6BF3;color:#fff;">Instagram</a>
+          <a href="https://www.facebook.com/digitalmusker" style="background:#F2EFE8;color:#111214;text-decoration:none;border-radius:999px;padding:10px 16px;font-size:13px;font-weight:700;" style-hover="background:#2B6BF3;color:#fff;">Facebook</a>
+          <a href="https://x.com/digitalmusker" style="background:#F2EFE8;color:#111214;text-decoration:none;border-radius:999px;padding:10px 16px;font-size:13px;font-weight:700;" style-hover="background:#2B6BF3;color:#fff;">X</a>
+          <a href="https://www.fiverr.com/digitalmusker" style="background:#F2EFE8;color:#111214;text-decoration:none;border-radius:999px;padding:10px 16px;font-size:13px;font-weight:700;" style-hover="background:#2B6BF3;color:#fff;">Fiverr</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Contact FAQ" style="max-width:1280px;margin:0 auto;padding:clamp(72px,10vw,130px) clamp(16px,4vw,40px) clamp(48px,6vw,80px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:48px;align-items:start;">
+    <h2 style="margin:0;font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(44px,6vw,88px);line-height:.95;">Before you reach out</h2>
+    <dc-import name="faq-list" items="{{ faqs }}" hint-size="100%,340px"></dc-import>
+  </section>
+
+  <dc-import name="site-footer" cta-title="Prefer a call? Let's book one." hint-size="100%,1100px"></dc-import>
+</main>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { name: '', email: '', channel: '', message: '', picked: [], sent: false };
+  renderVals() {
+    const s = this.state;
+    const opts = ['Strategy', 'SEO', 'Promotion', 'Channel management'];
+    const set = k => e => this.setState({ [k]: e.target.value });
+    return {
+      name: s.name, email: s.email, channel: s.channel, message: s.message,
+      setName: set('name'), setEmail: set('email'), setChannel: set('channel'), setMessage: set('message'),
+      services: opts.map(label => {
+        const on = s.picked.includes(label);
+        return { label, on, off: !on, toggle: () => this.setState(p => ({ picked: on ? p.picked.filter(x => x !== label) : [...p.picked, label] })) };
+      }),
+      sent: s.sent, notSent: !s.sent,
+      submit: e => {
+        e.preventDefault();
+        const lines = [`Hi Mohi, I'm ${s.name} (${s.email}).`];
+        if (s.channel) lines.push(`Channel: ${s.channel}`);
+        if (s.picked.length) lines.push(`Interested in: ${s.picked.join(', ')}`);
+        lines.push('', s.message);
+        window.open('https://wa.me/8801609010630?text=' + encodeURIComponent(lines.join('\n')), '_blank');
+        this.setState({ sent: true });
+      },
+      reset: () => this.setState({ sent: false, message: '', picked: [] }),
+      faqs: [
+        { q: 'What should I include in my message?', a: 'Your channel link, your niche, how often you upload and what you want to achieve. That lets me give you useful advice on the first reply.' },
+        { q: 'Is the first consultation really free?', a: 'Yes. We talk through your channel and goals, and you leave with clear next steps whether or not we work together.' },
+        { q: 'What time zone are you in?', a: 'I am based in Chattogram, Bangladesh (GMT+6) and work with clients across the USA, UK, Europe, Australia and Asia.' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>
